@@ -10,6 +10,13 @@
   <div class="ion-padding">
     Please draw your signature below.
   </div>
-  <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()">
-  </signature-pad>
+  <div class="{border-style: solid;}">
+    <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()">
+    </signature-pad>
+  </div>
+  <p>This is the base64 code of the image:</p>
+  <div>
+    <textarea rows="4" cols="40">{{imageBase64}}
+      </textarea>
+  </div>
 </ion-content>

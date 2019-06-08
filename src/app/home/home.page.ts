@@ -9,11 +9,11 @@ import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 })
 export class HomePage implements OnInit {
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
-
+  imageBase64: string;
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
-    'minWidth': 5,
+    'minWidth': 2,
     'canvasWidth': 500,
-    'canvasHeight': 300
+    'canvasHeight': 400
   };
   constructor() { }
 
@@ -23,13 +23,14 @@ export class HomePage implements OnInit {
 
   ngAfterViewInit() {
     // this.signaturePad is now available
-    this.signaturePad.set('minWidth', 5); // set szimek/signature_pad options at runtime
+    this.signaturePad.set('minWidth', 2); // set szimek/signature_pad options at runtime
     this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
   }
 
   drawComplete() {
     // will be notified of szimek/signature_pad's onEnd event
-    console.log(this.signaturePad.toDataURL());
+    this.imageBase64 = this.signaturePad.toDataURL();
+    console.log(this.imageBase64);
   }
 
   drawStart() {
