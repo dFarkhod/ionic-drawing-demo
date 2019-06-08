@@ -1,0 +1,7 @@
+{
+  "name": "IonicDrawingDemo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
