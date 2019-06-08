@@ -7,16 +7,38 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Demo</ion-card-subtitle>
+      <ion-card-title>Please draw your signature below.</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()">
+      </signature-pad>
+
+      <ion-button (click)="clear()">Clear</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <textarea rows="4" cols="40">{{imageBase64}}</textarea>
+    </ion-card-content>
+  </ion-card>
+
+
+  <!-- <div class="ion-padding">
     Please draw your signature below.
   </div>
-  <div class="{border-style: solid;}">
+  <p class="{border-style: solid;}">
     <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()">
     </signature-pad>
-  </div>
+  </p>
+  <ion-button (click)="clear()">Clear</ion-button>
+  
   <p>This is the base64 code of the image:</p>
   <div>
     <textarea rows="4" cols="40">{{imageBase64}}
       </textarea>
-  </div>
+  </div> -->
 </ion-content>

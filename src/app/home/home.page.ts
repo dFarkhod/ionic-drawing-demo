@@ -12,8 +12,8 @@ export class HomePage implements OnInit {
   imageBase64: string;
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 2,
-    'canvasWidth': 500,
-    'canvasHeight': 400
+    'canvasWidth': 400,
+    'canvasHeight': 200
   };
   constructor() { }
 
@@ -36,6 +36,10 @@ export class HomePage implements OnInit {
   drawStart() {
     // will be notified of szimek/signature_pad's onBegin event
     console.log('begin drawing');
+  }
+
+  clear() {
+    this.signaturePad.clear();
   }
 
 
