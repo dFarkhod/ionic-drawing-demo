@@ -13,6 +13,12 @@ sdkManager.bat --licenses and type y for few times
 
 https://stackoverflow.com/questions/38096225/automatically-accept-all-sdk-licences
 
+To run the project in Android device, run this command:
+ionic cordova run android
+
+To run it in the browser, run:
+ionic serve
+
 
 If there is error while starting this project on the mobile, follow these steps to solve:
 https://stackoverflow.com/questions/44224573/an-error-occurred-when-i-was-running-ionic-cordova-platform-add-ios
